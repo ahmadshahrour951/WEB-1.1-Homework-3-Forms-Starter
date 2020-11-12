@@ -84,18 +84,18 @@ animal_to_fact = {
 
 
 @app.route('/animal_facts')
-def animal_facts():
+def animal_facts(animal=None):
     """Show a form to choose an animal and receive facts."""
 
-    # TODO: Collect the form data and save as variables
+    if animal in [None, '']:
+      animal = request.args.get('animal')
 
     context = {
-        # TODO: Enter your context variables here for:
-        # - the list of all animals (get from animal_to_fact)
-        # - the chosen animal fact (may be None if the user hasn't filled out the form yet)
+        'animal_to_fact': animal_to_fact,
+        'animal_name': animal
     }
-    return render_template('animal_facts.html', **context)
 
+    return render_template('animal_facts.jinja', **context)
 
 ################################################################################
 # IMAGE FILTER ROUTE
