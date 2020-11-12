@@ -149,7 +149,6 @@ def image_filter():
         apply_filter(file_path, filter_type)
 
         image_url = f'/static/images/{image.filename}'
-        print(image_url)
 
         context = {
             'filter_types': filter_types,
