@@ -200,6 +200,6 @@ def gif_search():
         return render_template('gif_search.jinja')
 
 
-if __name__ == '__main__':
-    app.config['ENV'] = 'development'
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.config['ENV'] = 'development'
+#     app.run(debug=True)
